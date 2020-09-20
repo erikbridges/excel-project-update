@@ -18,13 +18,16 @@ export async function createEntry(entryString) {
       contents.length >= 4 ? Number(contents[4]) : Number(contents[3]);
 
     // Send Request to the Server
-    await axios.post("http://localhost:5000/", {
+    let request = await axios.post("http://localhost:5000/", {
       name,
       phoneNum,
       cashApp,
       numOfSpots,
     });
-    return { success: true };
+    if (request.data.success) {
+      return { success: true };
+    }
+    return { success: false };
   } catch (ex) {
     console.error(new Error("Request has failed with an error " + ex));
     return { success: false };

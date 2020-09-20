@@ -27,12 +27,10 @@ module.exports = async function (req, res) {
         errorMessages.push(item.msg);
       });
 
-      res.status(400);
-      res.send(
-        new Error(
-          "The following 400 Error(s) has occured during the request: " +
-            errorMessages
-        )
+      res.statusCode = 400;
+      throw new Error(
+        "The following 400 Error(s) has occured during the request: " +
+          errorMessages
       );
     }
     const { name, phoneNum, cashApp, numOfSpots } = req.body;
@@ -116,7 +114,7 @@ module.exports = async function (req, res) {
         logger.info("New data workbook created!");
         await dataWorkbook.xlsx.writeFile("data.xlsx");
       } catch (err) {
-        res.status(500);
+        res.statusCode = 500;
         logger.fatal(err);
         throw new Error(err);
       }
@@ -149,9 +147,9 @@ module.exports = async function (req, res) {
         logger.info("Writing new data to master file");
         await masterWorkBook.xlsx.writeFile("master.xlsx");
       } else {
-        res.status(400);
-        res.send(
-          new Error("A duplicate user is detected. Cannot create a new entry.")
+        res.statusCode = 400;
+        throw new Error(
+          "A duplicate user is detected. Cannot create a new entry."
         );
       }
     }
@@ -163,12 +161,10 @@ module.exports = async function (req, res) {
       await updateXLS(name, phoneNum, cashApp, numOfSpots);
       logger.info("Item successfully added to master!");
     };
-    res.status(200);
     await setAsyncTimeout();
-    res.send({ success: true });
+    return res.send({ success: true });
   } catch (err) {
-    res.status(500);
     logger.error(err);
-    res.send(err);
+    return res.send(new Error(err));
   }
 };
