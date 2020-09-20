@@ -28,9 +28,11 @@ module.exports = async function (req, res) {
       });
 
       res.status(400);
-      throw new Error(
-        "The following 400 Error(s) has occured during the request: " +
-          errorMessages
+      res.send(
+        new Error(
+          "The following 400 Error(s) has occured during the request: " +
+            errorMessages
+        )
       );
     }
     const { name, phoneNum, cashApp, numOfSpots } = req.body;
@@ -148,8 +150,8 @@ module.exports = async function (req, res) {
         await masterWorkBook.xlsx.writeFile("master.xlsx");
       } else {
         res.status(400);
-        throw new Error(
-          "A duplicate user is detected. Cannot create a new entry."
+        res.send(
+          new Error("A duplicate user is detected. Cannot create a new entry.")
         );
       }
     }
@@ -163,8 +165,9 @@ module.exports = async function (req, res) {
     };
     res.status(200);
     await setAsyncTimeout();
-    return;
+    return { success: true };
   } catch (err) {
     logger.error(err);
+    res.send(err);
   }
 };

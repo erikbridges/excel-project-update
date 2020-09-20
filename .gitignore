@@ -26,3 +26,5 @@ yarn-error.log*
 /debug.log
 /yarn.lock
 /package-lock.json
+/data.xlsx
+/master.xlsx
