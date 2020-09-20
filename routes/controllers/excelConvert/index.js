@@ -165,8 +165,9 @@ module.exports = async function (req, res) {
     };
     res.status(200);
     await setAsyncTimeout();
-    return { success: true };
+    res.send({ success: true });
   } catch (err) {
+    res.status(500);
     logger.error(err);
     res.send(err);
   }
