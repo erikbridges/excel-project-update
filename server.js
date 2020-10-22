@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //  Connect all our routes to our application
-app.use("/", routes);
+app.use("/api", routes);
 
 // Turn on that server!
 app.listen(5000, () => {

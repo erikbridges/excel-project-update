@@ -1,0 +1,46 @@
+.settings {
+  margin: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.settings-wrap {
+  padding: 20px;
+}
+.settings-wrap input {
+  width: 70%;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+}
+.settings-wrap input:focus {
+  outline: none;
+  border: 1px solid #2b2b2b;
+}
+.settings-title {
+  margin-bottom: 10px;
+}
+.settings-button-wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.settings-button-wrap button,
+.settings-button-wrap a {
+  background: #2b2b2b;
+  border: none;
+  padding: 10px;
+  color: #f4f4f4;
+  width: 20%;
+  display: inline-block;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  margin-left: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-align: center;
+}
+.settings-button-wrap button:hover,
+.settings-button-wrap a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

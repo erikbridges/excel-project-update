@@ -1,0 +1,70 @@
+.reset-pass {
+  max-width: 70%;
+  margin: 10px auto;
+  /* position: absolute; 
+  top: 45%;
+  left: 50%; */
+  /* bring your own prefixes */
+  /* transform: translate(-50%, -50%); */
+  background: #f4f4f4;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.reset-pass-box h2 {
+  padding: 20px;
+}
+.reset-pass-box p {
+  padding-bottom: 20px;
+  text-align: center;
+}
+.reset-pass-btn-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.reset-pass-input-wrap {
+  padding: 10px;
+}
+
+.reset-pass-input-wrap input {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+}
+.reset-pass-input-wrap input:focus {
+  outline: none;
+  border: 1px solid #2b2b2b;
+}
+.reset-pass-input-wrap label {
+  display: block;
+  text-align: left;
+}
+.reset-pass-btn-wrap a,
+.reset-pass-btn-wrap button, .btn-reset-code {
+  background: #2b2b2b;
+  border: none;
+  padding: 10px;
+  color: #f4f4f4;
+  display: inline-block;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  margin-left: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-top: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+.reset-pass-btn-wrap a:hover,
+.reset-pass-btn-wrap button:hover,.btn-reset-code:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

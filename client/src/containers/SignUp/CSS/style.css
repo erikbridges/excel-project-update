@@ -1,0 +1,92 @@
+.register {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  background: #f4f4f4;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+.register-input-wrap {
+  display: block;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.register-input-wrap label {
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.register-input-wrap input {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+  max-width: 500px;
+  position: relative;
+}
+.register-input-wrap input:focus {
+  outline: none;
+  border: 1px solid #2b2b2b;
+}
+.register-header {
+  padding: 10px;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.register-input-wrap button,
+.register-input-wrap a {
+  background: #2b2b2b;
+  border: none;
+  padding: 10px;
+  color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 40%;
+  border-radius: 5px;
+  margin-left: 1px;
+  display: inline-block;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.register-input-wrap button:hover,
+.register-input-wrap a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.visible {
+  color: #000;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 10;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.visible:hover {
+  opacity: 0.3;
+}
+.password-visible-wrap {
+  position: relative;
+}
+.password-wrap input {
+  width: 100%;
+}
+
+.error-message {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #960000;
+}

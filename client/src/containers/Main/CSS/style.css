@@ -1,0 +1,56 @@
+.main {
+  max-width: 100%;
+  margin: 30px auto;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main-btn-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  align-items: space-around;
+  flex-wrap: wrap;
+}
+.main-btn-wrap a, .main-btn-wrap button {
+  background: #2b2b2b;
+  border: none;
+  padding: 10px;
+  color: #f4f4f4;
+  width: 50%;
+  display: inline-block;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  margin-left: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.main-btn-wrap a:hover, .main-btn-wrap button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.excel-box {
+  margin: 20px;
+}
+.excel-box a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.excel-box a:hover {
+  opacity: 0.5;
+}
+
+.data-files {
+  padding-top: 100px;
+  margin: 30px;
+}
+
+.data-files > h1 {
+  text-align: center;
+  padding: 10px;
+  letter-spacing: 10px;
+}
