@@ -30,8 +30,18 @@ module.exports = async function (req, res) {
               errorMessages
           );
         }
-        const { name, phoneNum, cashApp, numOfSpots } = req.body;
-
+        const { entryString } = req.body;
+          // name, phoneNum, cashApp, numOfSpots
+        let contents = entryString.split(',').filter(Boolean);
+        
+        // Name
+        const name = contents[0];
+        // PhoneNum
+        const phoneNum =  contents[1];
+        // Cash App
+        const cashApp =  contents[2];
+        // Num of Spots
+        const numOfSpots = Number(contents[3])
         // Create Master Database
         // Insert Item to the Database
         const newEntryMaster = await db("masterexcel").insert({ fullname: name, phonenum: phoneNum, cashapp: cashApp, numofspots:  numOfSpots }).returning("*");
@@ -44,7 +54,7 @@ module.exports = async function (req, res) {
         await fs.promises.mkdir('./uploads', { recursive: true });
 
         // Insert Item to the Monthly database
-        const newEntry = await db("monthlyexcel").insert( { fullname: name, phonenum: phoneNum, cashapp: cashApp, numofspots:  numOfSpots }).returning("*");
+        const newEntry = await db("monthlyexcel").insert( { fullname: name.replace( /,/g, ""), phonenum: phoneNum.replace( /,/g, "" ), cashapp: cashApp.replace( /,/g, "" ), numofspots:  numOfSpots }).returning("*");
         
         // Create an Excel File From The Monthly Database
         let xls = json2xls(newEntry);
@@ -53,9 +63,9 @@ module.exports = async function (req, res) {
         // Send Success Response
         res.send({success: true, message: "Entry Successfully added!"})
     } catch (ex) {
-        console.log(ex)
+        console.log(ex.message)
         logger.error(ex);
-        return res.send(new Error(ex));
+        return res.send(new Error(ex.message));
     }
 
 }

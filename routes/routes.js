@@ -3,17 +3,20 @@ const { body } = require('express-validator');
 
 const monthlyDownload = require("./controllers/monthlyDownload");
 const masterDownload = require("./controllers/masterDownload");
-const sendRequest = require("./controllers/sendRequest")
+const sendRequest = require("./controllers/sendRequest");
+const excelConvert = require("./controllers/excelConvert");
 
-// Download Excel File Monthly
+
+// Introduction
 routes.get("/", async (req, res) => sendRequest(req, res))
 
-// Excel Conversion
+// Create Entry
 routes.post("/create-entry",[
-    body('name').matches(/[A-Z]+/).withMessage("Invalid Name Section"),
-    body('phoneNum').matches(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i).withMessage("Invalid Phone Number"),
-    body("cashApp").matches(/([$A-Z][^\s])/).withMessage("Invalid Cashpapp user"),
-    body("numOfSpots").matches(/[0-9]+/).withMessage("Number of Spots must be a number")
+    // body('name').matches(/[A-Z]+/).withMessage("Invalid Name Section"),
+    // body('phoneNum').matches(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/i).withMessage("Invalid Phone Number"),
+    // body("cashApp").matches(/([$A-Z][^\s])/).withMessage("Invalid Cashpapp user"),
+    // body("numOfSpots").matches(/[0-9]+/).withMessage("Number of Spots must be a number"),
+    body("entryString").isString().withMessage("Must be a string!")
 ], async (req, res) => await excelConvert(req, res));
 
 
