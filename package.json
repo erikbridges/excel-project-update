@@ -4,7 +4,8 @@
   "description": "Excel conversion",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "heroku-postbuild": "npm install nodemon --dev"
   },
   "author": "Erik",
   "license": "ISC",
