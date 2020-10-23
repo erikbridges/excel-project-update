@@ -45,7 +45,10 @@ setIntervalAsync(
   },
   262974600
 )
+
+const port = process.env.PORT || 5000;
 // Turn on that server!
-app.listen(5000, () => {
-  console.log("App listening on port 5000");
+app.listen(port, () => {
+  logger.info("Listening on port " + port)
+  console.log("App listening on port " + port);
 });
