@@ -32,10 +32,7 @@ app.use(bodyParser.json());
 
 //  Connect all our routes to our application
 app.use("/api", routes);
-<<<<<<< HEAD
 
-=======
->>>>>>> ea0e3889296475bf173f90b9d4388c527c202b94
 
 // After a Month Reset The Monthly Database 262974600 is a Month in milliseconds
 setIntervalAsync(
