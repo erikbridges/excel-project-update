@@ -3,6 +3,10 @@ const { body } = require('express-validator');
 
 const monthlyDownload = require("./controllers/monthlyDownload");
 const masterDownload = require("./controllers/masterDownload");
+const sendRequest = require("./controllers/sendRequest")
+
+// Download Excel File Monthly
+routes.get("/", async (req, res) => sendRequest(req, res))
 
 // Excel Conversion
 routes.post("/create-entry",[
@@ -20,6 +24,8 @@ routes.get("/monthly", async (req, res) => monthlyDownload(req, res))
 
 // Download Excel File Master
 routes.get("/master",  async (req, res) => masterDownload(req, res))
+
+routes.get("/", (req, res) => sendRequest(req, res));
 
 
 module.exports = routes;
