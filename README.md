@@ -11,7 +11,7 @@ Project Excel is a node js application that allows users to create a excel file 
 
 # What's in this Version?
 
-- The basic function has been added. The ability to create an an excel file containing a single entry that has been created by the user. Once created after 10 seconds it will be reseted and added to a newly created master.xlsx file. (It can be changed to 2 days for production purposes)
+- The basic function has been added. The ability to create an an excel file containing a single entry that has been created by the user. Once created after 10 seconds it will be reseted and added to a newly created master.xlsx file. (It can be changed to 1 month for production purposes)
 - Validation has been added! The program has the ability to check if the information is correct. This is to avoid incorrect data from being submitted.
 - A Debug logger has been added. The program can log errors in a debug.log file
 - Login System (1.5 Only)
