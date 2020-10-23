@@ -51,7 +51,7 @@ module.exports = async function (req, res) {
         await writeFile('./uploads/monthly.xlsx', xls, 'binary');
 
         // Send Success Response
-        res.send({success: true})
+        res.send({success: true, message: "Entry Successfully added!"})
     } catch (ex) {
         console.log(ex)
         logger.error(ex);
