@@ -1,4 +1,4 @@
-# Project Excel 1.5 Beta
+# Project Excel 2.0 Beta
 
 [![Build Status](https://github.com/erikbridges/excel-project)](https://github.com/erikbridgesr)
 
